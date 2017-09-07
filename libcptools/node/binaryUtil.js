@@ -1,14 +1,15 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+// import {TextDecoder, TextEncoder} from 'text-encoding'
+// ==>
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _textEncoding = require('text-encoding');
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var _require = require('text-encoding'),
+    TextDecoder = _require.TextDecoder,
+    TextEncoder = _require.TextEncoder;
 
 var binaryUtil = function () {
   function binaryUtil() {
@@ -243,7 +244,7 @@ var binaryUtil = function () {
     value: function typeUTF8(messageType, bytes, utf8Callback) {
       if (messageType[0] === 0x55 && messageType[1] === 0x54 && messageType[2] === 0x46 && messageType[3] === 0x38) {
         // handle byte array as a string
-        var decoded = new _textEncoding.TextDecoder('UTF-8').decode(bytes);
+        var decoded = new TextDecoder('UTF-8').decode(bytes);
         console.log('==>' + decoded);
         utf8Callback({
           type: 'UTF8',
@@ -256,7 +257,7 @@ var binaryUtil = function () {
     value: function type0001(messageType, bytes, callback0001) {
       if (messageType[0] === 0x00 && messageType[1] === 0x00 && messageType[2] === 0x00 && messageType[3] === 0x01) {
         // handle byte array as a string
-        var decoded = new _textEncoding.TextDecoder('UTF-8').decode(bytes);
+        var decoded = new TextDecoder('UTF-8').decode(bytes);
         console.log('==>' + decoded);
         callback0001({
           type: '0001',
@@ -355,7 +356,7 @@ var binaryUtil = function () {
       var cb = utf8Callback;
       try {
         // handle data array as a string
-        var utf8Bytes = new _textEncoding.TextEncoder('UTF-8').encode(str);
+        var utf8Bytes = new TextEncoder('UTF-8').encode(str);
 
         // console.log('SEND AS BYTES:')
         // for (var c = 0; c < utf8Bytes.length; c++) {
@@ -410,7 +411,7 @@ var binaryUtil = function () {
       var imgInfo = 'SEND IMAGE PLEASE';
       var cb = callback;
       try {
-        var utf8Bytes = new _textEncoding.TextEncoder('UTF-8').encode(imgInfo);
+        var utf8Bytes = new TextEncoder('UTF-8').encode(imgInfo);
 
         var baDataLen = utf8Bytes.length;
         console.log('UTF8 BYTE LEN: ' + baDataLen);
@@ -537,4 +538,8 @@ var binaryUtil = function () {
   return binaryUtil;
 }();
 
-exports.default = binaryUtil;
+// export default binaryUtil
+// ===>
+
+
+module.exports.binaryUtil = binaryUtil;

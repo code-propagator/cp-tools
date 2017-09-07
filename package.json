@@ -1,28 +1,28 @@
 {
-  "_from": "cp-tools@^1.0.0",
-  "_id": "cp-tools@1.0.1",
+  "_from": "cp-tools@^1.0.1",
+  "_id": "cp-tools@1.0.2",
   "_inBundle": false,
-  "_integrity": "sha512-KTYL9vyKcphyCZIJxAo4/dqidwN/yboGgqcu894GFqiBsYV17qoE/694WwvgXY/omrVM4bdMBZtZOzd2ug52qA==",
+  "_integrity": "sha512-5xxr0NOH5UEdiTrdP3esohfvZjp5AQw7iF3Whhdgk+2/eISzwdxDlMGQMFdLaCUNRqZxUmFufuuFwO0Nf+PBKg==",
   "_location": "/cp-tools",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "cp-tools@^1.0.0",
+    "raw": "cp-tools@^1.0.1",
     "name": "cp-tools",
     "escapedName": "cp-tools",
-    "rawSpec": "^1.0.0",
+    "rawSpec": "^1.0.1",
     "saveSpec": null,
-    "fetchSpec": "^1.0.0"
+    "fetchSpec": "^1.0.1"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cp-tools/-/cp-tools-1.0.1.tgz",
-  "_shasum": "d820e717473611ee0790f40fbbf17b7342256020",
-  "_spec": "cp-tools@^1.0.0",
-  "_where": "/Users/penelope/Documents/Node_Install/ATOM_PROJECTS/electron-realm-react-router-app",
+  "_resolved": "https://registry.npmjs.org/cp-tools/-/cp-tools-1.0.2.tgz",
+  "_shasum": "bb569fa02d94e6460a5f97b2eb06596bbf605c54",
+  "_spec": "cp-tools@^1.0.1",
+  "_where": "/Users/penelope/Documents/Node_Install/ATOM_PROJECTS/use-cp-tools-app",
   "author": {
     "name": "code-propagator"
   },
@@ -70,5 +70,5 @@
     "type": "git",
     "url": "git+https://github.com/code-propagator/cp-tools.git"
   },
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
