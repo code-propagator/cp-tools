@@ -1,7 +1,7 @@
 'use strict';
 
 // import {TextDecoder, TextEncoder} from 'text-encoding'
-// ==>
+// ==> ERROR
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -11,9 +11,9 @@ var _require = require('text-encoding'),
     TextDecoder = _require.TextDecoder,
     TextEncoder = _require.TextEncoder;
 
-var binaryUtil = function () {
-  function binaryUtil() {
-    _classCallCheck(this, binaryUtil);
+var BinaryUtil = function () {
+  function BinaryUtil() {
+    _classCallCheck(this, BinaryUtil);
 
     console.log('BINARY UTIL');
 
@@ -47,7 +47,7 @@ var binaryUtil = function () {
   // http://stackoverflow.com/questions/8482309/converting-javascript-integer-to-byte-array-and-back
 
 
-  _createClass(binaryUtil, [{
+  _createClass(BinaryUtil, [{
     key: 'longToByteArray',
     value: function longToByteArray(long) {
       // we want to represent the input as a 8-bytes array
@@ -535,11 +535,11 @@ var binaryUtil = function () {
     }
   }]);
 
-  return binaryUtil;
+  return BinaryUtil;
 }();
 
-// export default binaryUtil
-// ===>
+// export default BinaryUtil
+// ===> ERROR
 
 
-module.exports.binaryUtil = binaryUtil;
+module.exports.BinaryUtil = BinaryUtil;

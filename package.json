@@ -1,27 +1,27 @@
 {
-  "_from": "cp-tools@^1.0.1",
-  "_id": "cp-tools@1.0.2",
+  "_from": "cp-tools@^1.0.2",
+  "_id": "cp-tools@1.0.3",
   "_inBundle": false,
-  "_integrity": "sha512-5xxr0NOH5UEdiTrdP3esohfvZjp5AQw7iF3Whhdgk+2/eISzwdxDlMGQMFdLaCUNRqZxUmFufuuFwO0Nf+PBKg==",
+  "_integrity": "sha512-iaAP7Bw0VwemQ84BZFZxbrfZ3bYBNE07VeIigOf6H7DpKA5FacRUq9Ze+xLtpsxGqGbOtS1QDNQDqwlTvyMMsA==",
   "_location": "/cp-tools",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "cp-tools@^1.0.1",
+    "raw": "cp-tools@^1.0.2",
     "name": "cp-tools",
     "escapedName": "cp-tools",
-    "rawSpec": "^1.0.1",
+    "rawSpec": "^1.0.2",
     "saveSpec": null,
-    "fetchSpec": "^1.0.1"
+    "fetchSpec": "^1.0.2"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cp-tools/-/cp-tools-1.0.2.tgz",
-  "_shasum": "bb569fa02d94e6460a5f97b2eb06596bbf605c54",
-  "_spec": "cp-tools@^1.0.1",
+  "_resolved": "https://registry.npmjs.org/cp-tools/-/cp-tools-1.0.3.tgz",
+  "_shasum": "8dc2f1c94db12d7b4e06896becca4e5eefacec14",
+  "_spec": "cp-tools@^1.0.2",
   "_where": "/Users/penelope/Documents/Node_Install/ATOM_PROJECTS/use-cp-tools-app",
   "author": {
     "name": "code-propagator"
@@ -70,5 +70,5 @@
     "type": "git",
     "url": "git+https://github.com/code-propagator/cp-tools.git"
   },
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
