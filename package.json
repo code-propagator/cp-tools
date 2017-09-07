@@ -1,23 +1,35 @@
 {
-  "name": "cp-tools",
-  "version": "1.0.1",
-  "description": "App tools for electron, realm, react, etc...",
-  "private": false,
-  "repository": {
-    "type" : "git",
-     "url" : "https://github.com/code-propagator/cp-tools.git"
+  "_from": "cp-tools@^1.0.0",
+  "_id": "cp-tools@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-KTYL9vyKcphyCZIJxAo4/dqidwN/yboGgqcu894GFqiBsYV17qoE/694WwvgXY/omrVM4bdMBZtZOzd2ug52qA==",
+  "_location": "/cp-tools",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cp-tools@^1.0.0",
+    "name": "cp-tools",
+    "escapedName": "cp-tools",
+    "rawSpec": "^1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.0"
   },
-  "main": "index.js",
-  "keywords": ["electron", "realm", "react", "router", "node"],
-  "author": "code.propagator@gmail.com",
-  "license": "MIT",
-  "author": "code-propagator",
-  "devDependencies": {
-    "electron": "~1.6.2",
-    "electron-builder": "^19.20.1",
-    "electron-rebuild": "^1.6.0",
-    "uglifyjs-webpack-plugin": "^0.4.6"
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cp-tools/-/cp-tools-1.0.1.tgz",
+  "_shasum": "d820e717473611ee0790f40fbbf17b7342256020",
+  "_spec": "cp-tools@^1.0.0",
+  "_where": "/Users/penelope/Documents/Node_Install/ATOM_PROJECTS/electron-realm-react-router-app",
+  "author": {
+    "name": "code-propagator"
   },
+  "bugs": {
+    "url": "https://github.com/code-propagator/cp-tools/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -33,5 +45,30 @@
     "text-encoding": "^0.6.4",
     "uuid": "^3.1.0",
     "webpack": "^3.5.5"
-  }
+  },
+  "deprecated": false,
+  "description": "App tools for electron, realm, react, etc...",
+  "devDependencies": {
+    "electron": "~1.6.2",
+    "electron-builder": "^19.20.1",
+    "electron-rebuild": "^1.6.0",
+    "uglifyjs-webpack-plugin": "^0.4.6"
+  },
+  "homepage": "https://github.com/code-propagator/cp-tools#readme",
+  "keywords": [
+    "electron",
+    "realm",
+    "react",
+    "router",
+    "node"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "cp-tools",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-propagator/cp-tools.git"
+  },
+  "version": "1.0.1"
 }
