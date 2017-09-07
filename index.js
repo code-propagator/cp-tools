@@ -1,13 +1,13 @@
 'use strict'
 
 module.export.modules = {
-  autoUpdater: require('./cptools/electron/autoUpdater'),
-  createWindow: require('./cptools/electron/createWindow'),
-  binaryUtil: require('./cptools/node/binaryUtil'),
-  emitter: require('./cptools/node/emitter'),
-  hashHist: require('./cptools/node/hashHist'),
-  timeUtil: require('./cptools/node/timeUtil'),
-  ClickCount: require('./cptools/react/ClickCount'),
-  realmUtil: require('./cptools/realm/realmUtil'),
-  schema: require('./cptools/realm/schema')
+  autoUpdater: require('./libcptools/electron/autoUpdater'),
+  createWindow: require('./libcptools/electron/createWindow'),
+  binaryUtil: require('./libcptools/node/binaryUtil'),
+  emitter: require('./libcptools/node/emitter'),
+  hashHist: require('./libcptools/node/hashHist'),
+  timeUtil: require('./libcptools/node/timeUtil'),
+  ClickCount: require('./libcptools/react/ClickCount'),
+  realmUtil: require('./libcptools/realm/realmUtil'),
+  schema: require('./libcptools/realm/schema')
 }
