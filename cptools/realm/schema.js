@@ -1,15 +1,15 @@
-'use strict';
+'use strict'
 
-var PostSchema = {
+let PostSchema = {
   name: 'Post',
   properties: {
     timestamp: 'date',
     title: 'string',
     content: 'string'
   }
-};
+}
 
-var UsersSchema = {
+let UsersSchema = {
   name: 'User',
   primaryKey: 'uuid',
   properties: {
@@ -19,8 +19,8 @@ var UsersSchema = {
     role: 'string',
     created_at: 'date'
   }
-};
+}
 
-var schema = [PostSchema, UsersSchema];
+let schema = [PostSchema, UsersSchema]
 
-module.exports.schema = schema;
+module.exports.schema = schema
