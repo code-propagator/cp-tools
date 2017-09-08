@@ -1,6 +1,6 @@
 'use strict'
 
-let binaryUtil = require('./libcptools/node/binaryUtil')
+let BinaryUtil = require('./libcptools/node/BinaryUtil')
 let emitter = require('./libcptools/node/emitter')
 let hashHist = require('./libcptools/node/hashHist')
 let timeUtil = require('./libcptools/node/timeUtil')
@@ -20,7 +20,7 @@ schema: require('./libcptools/realm/schema'),
 */
 
 module.exports = {
-  binaryUtil: binaryUtil,
+  BinaryUtil: BinaryUtil,
   emitter: emitter,
   hashHist: hashHist,
   timeUtil: timeUtil,
