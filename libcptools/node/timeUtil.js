@@ -2,56 +2,66 @@
 
 // import moment from 'moment'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 var moment = require('moment');
 
 var TSZONE = 'YYYY-MM-DD HH:mm:ss.SSSZ';
 
-var timeUtil = function () {
-  function timeUtil() {
-    _classCallCheck(this, timeUtil);
+var currentTimestamp = function currentTimestamp() {
+  return moment().format(TSZONE);
+};
 
-    this.currentTimestamp = this.currentTimestamp.bind(this);
-    this.localToUTC = this.localToUTC.bind(this);
-    this.utcToLocal = this.utcToLocal.bind(this);
-    this.currentTimestampUTC = this.currentTimestampUTC.bind(this);
+var currentTimestampUTC = function currentTimestampUTC() {
+  return localToUTC(currentTimestamp());
+};
+
+var localToUTC = function localToUTC(localTS) {
+  return moment(localTS).utc().format(TSZONE);
+};
+
+var utcToLocal = function utcToLocal(utcTS) {
+  return moment(utcTS).format(TSZONE);
+};
+
+var utcToISO = function utcToISO(utcTS) {
+  return moment(utcTS).toUTCString();
+};
+
+module.exports.TSZONE = TSZONE;
+module.exports.currentTimestamp = currentTimestamp;
+module.exports.currentTimestampUTC = currentTimestampUTC;
+module.exports.localToUTC = localToUTC;
+module.exports.utcToLocal = utcToLocal;
+module.exports.utcToISO = utcToISO;
+
+/*
+class timeUtil {
+  constructor () {
+    this.currentTimestamp = this.currentTimestamp.bind(this)
+    this.localToUTC = this.localToUTC.bind(this)
+    this.utcToLocal = this.utcToLocal.bind(this)
+    this.currentTimestampUTC = this.currentTimestampUTC.bind(this)
   }
 
-  _createClass(timeUtil, [{
-    key: 'currentTimestamp',
-    value: function currentTimestamp() {
-      return moment().format(TSZONE);
-    }
-  }, {
-    key: 'currentTimestampUTC',
-    value: function currentTimestampUTC() {
-      return this.localToUTC(this.currentTimestamp());
-    }
-  }, {
-    key: 'localToUTC',
-    value: function localToUTC(localTS) {
-      return moment(localTS).utc().format(TSZONE);
-    }
-  }, {
-    key: 'utcToLocal',
-    value: function utcToLocal(utcTS) {
-      return moment(utcTS).format(TSZONE);
-    }
-  }, {
-    key: 'utcToISO',
-    value: function utcToISO(utcTS) {
-      return moment(utcTS).toUTCString();
-    }
-  }]);
+  currentTimestamp () {
+    return moment().format(TSZONE)
+  }
 
-  return timeUtil;
-}();
+  currentTimestampUTC () {
+    return this.localToUTC(this.currentTimestamp())
+  }
 
-exports.default = timeUtil;
+  localToUTC (localTS) {
+    return moment(localTS).utc().format(TSZONE)
+  }
+
+  utcToLocal (utcTS) {
+    return moment(utcTS).format(TSZONE)
+  }
+
+  utcToISO (utcTS) {
+    return moment(utcTS).toUTCString()
+  }
+}
+
+export default timeUtil
+*/
