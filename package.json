@@ -1,6 +1,6 @@
 {
   "name": "cp-tools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "App tools for electron, realm, react, etc...",
   "private": false,
   "repository": {
