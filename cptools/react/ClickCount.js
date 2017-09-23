@@ -21,7 +21,7 @@ class ClickCount extends Component {
   render () {
     return (
       <div>
-        Count:<span>{this.state.count}</span>
+        Count Up:<span>{this.state.count}</span>
         <div><button onClick={this.handleClickUp}>UP</button></div>
       </div>
     )

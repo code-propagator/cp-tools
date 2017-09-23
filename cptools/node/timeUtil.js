@@ -3,7 +3,7 @@
 // import moment from 'moment'
 const moment = require('moment')
 
-var TSZONE = 'YYYY-MM-DD HH:mm:ss.SSSZ'
+var TSZONE = 'YYYY-MM-DDTHH:mm:ss.SSSZ'
 
 let currentTimestamp = () => {
   return moment().format(TSZONE)
