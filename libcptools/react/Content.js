@@ -42,7 +42,7 @@ var Content = function (_Component) {
   _createClass(Content, [{
     key: 'decoratedContent',
     value: function decoratedContent(id) {
-      if (id === 'undefined' || id < 0 || id >= this.props.contents.length) {
+      if (typeof id === 'undefined' || id < 0 || id >= this.props.contents.length) {
         return _react2.default.createElement('div', null);
       }
       // get content in the array

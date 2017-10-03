@@ -55,8 +55,8 @@ var MuiScrollList = function (_Component) {
     _this.state = {
       rowToJumpTo: null,
       newRowToJumpTo: jump,
-      averageElementHeight: _this.props.averageElementHeight === 'undefined' ? AVERAGE_ELEMENT_HEIGHT : _this.props.averageElementHeight,
-      containerHeight: _this.props.containerHeight === 'undefined' ? CONTAINER_HEIGHT : _this.props.containerHeight,
+      averageElementHeight: typeof _this.props.averageElementHeight === 'undefined' ? AVERAGE_ELEMENT_HEIGHT : _this.props.averageElementHeight,
+      containerHeight: typeof _this.props.containerHeight === 'undefined' ? CONTAINER_HEIGHT : _this.props.containerHeight,
       fetchData: _this.props.fetchData, // function to fetch data
       renderRow: _this.props.renderRow, // function to reander row
       showRefreshButton: _this.props.showRefreshButton,
@@ -139,11 +139,11 @@ var MuiScrollList = function (_Component) {
         count = this.props.dataArr.length;
       }
 
-      var averageElementHeight = this.state.averageElementHeight === 'undefined' ? AVERAGE_ELEMENT_HEIGHT : this.state.averageElementHeight;
+      var averageElementHeight = typeof this.state.averageElementHeight === 'undefined' ? AVERAGE_ELEMENT_HEIGHT : this.state.averageElementHeight;
 
-      var containerHeight = this.state.containerHeight === 'undefined' ? CONTAINER_HEIGHT : this.state.containerHeight;
+      var containerHeight = typeof this.state.containerHeight === 'undefined' ? CONTAINER_HEIGHT : this.state.containerHeight;
 
-      if (this.props.hideHeader !== 'undefined' && this.props.hideHeader === true) {
+      if (typeof this.props.hideHeader !== 'undefined' && this.props.hideHeader === true) {
         return _react2.default.createElement(
           'div',
           null,
@@ -187,7 +187,7 @@ var MuiScrollList = function (_Component) {
                 { xs: true },
                 _react2.default.createElement(_RaisedButton2.default, { label: HEAD, onClick: this.jumpToTop }),
                 _react2.default.createElement(_RaisedButton2.default, { label: TAIL, onClick: this.jumpToEnd }),
-                this.state.showRefreshButton !== 'undefined' && this.state.showRefreshButton === true ? _react2.default.createElement(_RaisedButton2.default, { label: REFRESH, onClick: this.refreshData }) : _react2.default.createElement('div', null)
+                typeof this.state.showRefreshButton !== 'undefined' && this.state.showRefreshButton === true ? _react2.default.createElement(_RaisedButton2.default, { label: REFRESH, onClick: this.refreshData }) : _react2.default.createElement('div', null)
               )
             )
           ),

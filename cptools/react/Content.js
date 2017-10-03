@@ -15,7 +15,7 @@ class Content extends Component {
   }
 
   decoratedContent (id) {
-    if (id === 'undefined' || id < 0 || id >= this.props.contents.length) {
+    if (typeof id === 'undefined' || id < 0 || id >= this.props.contents.length) {
       return (<div />)
     }
     // get content in the array

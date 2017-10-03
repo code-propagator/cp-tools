@@ -24,9 +24,9 @@ class MuiScrollList extends Component {
     this.state = {
       rowToJumpTo: null,
       newRowToJumpTo: jump,
-      averageElementHeight: this.props.averageElementHeight === 'undefined'
+      averageElementHeight: typeof this.props.averageElementHeight === 'undefined'
         ? AVERAGE_ELEMENT_HEIGHT : this.props.averageElementHeight,
-      containerHeight: this.props.containerHeight === 'undefined'
+      containerHeight: typeof this.props.containerHeight === 'undefined'
         ? CONTAINER_HEIGHT : this.props.containerHeight,
       fetchData: this.props.fetchData, // function to fetch data
       renderRow: this.props.renderRow, // function to reander row
@@ -107,14 +107,14 @@ class MuiScrollList extends Component {
       count = this.props.dataArr.length
     }
 
-    const averageElementHeight = this.state.averageElementHeight === 'undefined'
+    const averageElementHeight = typeof this.state.averageElementHeight === 'undefined'
       ? AVERAGE_ELEMENT_HEIGHT : this.state.averageElementHeight
 
-    const containerHeight = this.state.containerHeight === 'undefined'
+    const containerHeight = typeof this.state.containerHeight === 'undefined'
       ? CONTAINER_HEIGHT : this.state.containerHeight
 
     if (
-      this.props.hideHeader !== 'undefined' &&
+      typeof this.props.hideHeader !== 'undefined' &&
       this.props.hideHeader === true
     ) {
       return (
@@ -150,7 +150,7 @@ class MuiScrollList extends Component {
                 <RaisedButton label={HEAD} onClick={this.jumpToTop} />
                 <RaisedButton label={TAIL} onClick={this.jumpToEnd} />
                 {
-                  (this.state.showRefreshButton !== 'undefined' &&
+                  (typeof this.state.showRefreshButton !== 'undefined' &&
                   this.state.showRefreshButton === true)
                   ? <RaisedButton label={REFRESH} onClick={this.refreshData} />
                   : <div />

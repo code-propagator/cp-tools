@@ -1,6 +1,6 @@
 {
   "name": "cp-tools",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "App tools for electron, realm, react, router, node, material-ui, co-tools, etc...",
   "private": false,
   "repository": {

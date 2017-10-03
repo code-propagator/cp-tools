@@ -25,12 +25,20 @@ let utcToISO = (utcTS) => {
   return moment(utcTS).toUTCString()
 }
 
-module.exports.TSZONE = TSZONE
-module.exports.currentTimestamp = currentTimestamp
-module.exports.currentTimestampUTC = currentTimestampUTC
-module.exports.localToUTC = localToUTC
-module.exports.utcToLocal = utcToLocal
-module.exports.utcToISO = utcToISO
+let fromStringToDate = (s) => {
+  // "2017-07-15T20:13:58.586Z"
+  return moment(s).toDate()
+}
+
+module.exports = {
+  TSZONE,
+  currentTimestamp,
+  currentTimestampUTC,
+  localToUTC,
+  utcToLocal,
+  utcToISO,
+  fromStringToDate
+}
 
 /*
 class timeUtil {

@@ -35,7 +35,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // 0.19.1
 
 // https://material-ui-1dab0.firebaseapp.com/demos/buttons/
-//　import Button from 'material-ui/Button'
+// import Button from 'material-ui/Button'
 
 // import CircularProgress from 'material-ui/CircularProgress'
 

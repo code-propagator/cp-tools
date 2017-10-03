@@ -77,7 +77,7 @@ var MuiCompInputTextField = function (_Component) {
   }, {
     key: 'handleOnChange',
     value: function handleOnChange(value) {
-      if (this.props.conf !== 'undefined' && this.props.conf.validationType !== 'undefined' && this.props.conf.validationType === VALIDATION_TYPES.TYPE_REQUIRED) {
+      if (typeof this.props.conf !== 'undefined' && typeof this.props.conf.validationType !== 'undefined' && this.props.conf.validationType === VALIDATION_TYPES.TYPE_REQUIRED) {
         this.checkForRequired(value);
       } else {
         this.setState({
