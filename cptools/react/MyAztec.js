@@ -231,7 +231,7 @@ export const Aztec = (props) => {
       }
       {
         layout.worows.map((field, index) => (
-          <div key={index} style={field.style} className={`${field.className} ${(field.visible === false) ? 'hidden' : 'show'}`}>
+          <div key={index} style={{...field.style}} className={`${field.className} ${(field.visible === false) ? 'hidden' : 'show'}`}>
             {
               <DynamicComponent
                 component={config.map[field.type].type}

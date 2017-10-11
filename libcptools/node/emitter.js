@@ -1,5 +1,11 @@
 'use strict';
 
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var events = require('events');
 
 // https://nodejs.org/api/events.html
@@ -10,11 +16,13 @@ console.log('---> max', events.EventEmitter.defaultMaxListeners);
 // emitter.updateEmitter.setMaxListeners(emitter.updateEmitter.getMaxListeners() + 1)
 // ===> THIS DOESN'T WORK ANY LONGER!
 
-// 'force-update'
 var emitterFactory = function emitterFactory(eventName) {
   // create a emitter
   var myEmitter = new events.EventEmitter();
   console.log('EventEmitter is created for eventName', eventName);
+  // (node:62909) MaxListenersExceededWarning: Possible EventEmitter memory leak detected.
+  // 11 asynchronous-reply listeners added. Use emitter.setMaxListeners() to increase limit
+  myEmitter.setMaxListeners(0);
 
   var myEmitterCallbacks = {};
 
@@ -32,7 +40,7 @@ var emitterFactory = function emitterFactory(eventName) {
     console.log('emitter RECEIVED', eventName, arg);
 
     // call subscribers
-    var keys = Object.keys(myEmitterCallbacks);
+    var keys = (0, _keys2.default)(myEmitterCallbacks);
     console.log('subscribers', keys);
     keys.map(function (uuid) {
       var cbFunc = myEmitterCallbacks[uuid];
@@ -55,7 +63,9 @@ var authEmitter = emitterFactory('auth-done');
 emitters['force-update'] = updateEmitter;
 emitters['auth-done'] = authEmitter;
 
-module.exports.emitterFactory = emitterFactory;
-module.exports.emitters = emitters;
-module.exports.updateEmitter = updateEmitter;
-module.exports.authEmitter = authEmitter;
+module.exports = {
+  emitterFactory: emitterFactory,
+  emitters: emitters,
+  updateEmitter: updateEmitter,
+  authEmitter: authEmitter
+};

@@ -150,8 +150,8 @@ class MuiCompLogin extends Component {
     */
     // console.log('MuiCompLogin state', this.state)
     return (
-      <div style={authStyle} ref={this.state.instanceId} >
-        <div style={statusStyle}>{this.state.status}</div><br />
+      <div style={{...authStyle}} ref={this.state.instanceId} >
+        <div style={{...statusStyle}}>{this.state.status}</div><br />
         <MuiCompInputTextField ref='username'
           conf={myLoginConf.username} /><br />
         <MuiCompInputTextField ref='password'

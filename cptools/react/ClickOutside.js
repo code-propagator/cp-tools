@@ -77,7 +77,7 @@ class ClickOutside extends Component {
     */
     return (
       <div
-        style={container}
+        style={{...container}}
         onClick={(e) => {
           this._clicked(e)
         }}>

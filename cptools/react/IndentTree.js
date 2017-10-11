@@ -381,7 +381,12 @@ let renderMuiList = (treeNode, onClickCallback) => {
       // }
       name = name + ' [' + key + ']'
       // leaf true
-      return (<ListItem key={key} ref={refId} onClick={handlerForKey(key, refId)} primaryText={name} />)
+      return (<ListItem
+        key={key}
+        ref={refId}
+        onClick={handlerForKey(key, refId)}
+        primaryText={name}
+      />)
       // return thisleaf
     } else {
       key++
@@ -396,18 +401,23 @@ let renderMuiList = (treeNode, onClickCallback) => {
       parent = name
       let ch = []
       name = name + ' [' + key + ']'
-      let node = <ListItem key={key} ref={refId} onClick={handlerForKey(key, refId)} primaryText={name}
-        initiallyOpen
-        primaryTogglesNestedList
-        nestedItems={ch}
-      />
+      // ### To avoid 'object is not extensible' error for nestedItems property,
+      // ### You shuld set up ch array first.
       children.map((elem, index) => {
         level = level + 1
         ch.push(traverseThis(level, parent, elem))
         level = level - 1
       })
-      node.nestedItems = ch
-      return node
+      // ### Assign ch to nestedItems.
+      return (<ListItem
+        key={key}
+        ref={refId}
+        onClick={handlerForKey(key, refId)}
+        primaryText={name}
+        initiallyOpen
+        primaryTogglesNestedList
+        nestedItems={ch}
+      />)
     }
   }
 

@@ -5,6 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Aztec = undefined;
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _assign = require('babel-runtime/core-js/object/assign');
+
+var _assign2 = _interopRequireDefault(_assign);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -126,7 +134,7 @@ var updateResponse = function updateResponse(fields, patch, guid) {
 };
 
 var getCurrentFormData = function getCurrentFormData(fields, errors, guid) {
-  var formData = Object.assign([], fields);
+  var formData = (0, _assign2.default)([], fields);
   _lodash2.default.map(formData, function (field) {
     if (field.type === 'selectfield') {
       field.props.selected = response[guid][field.id];
@@ -152,7 +160,7 @@ var getErrors = function getErrors(fields, guid) {
     _lodash2.default.each(field.rules.validation, function (rule) {
       var isClean = _validation2.default[rule.rule](response[guid][field.id].toString(), rule.value);
       if (!isClean) {
-        var error = Object.assign({}, rule, {
+        var error = (0, _assign2.default)({}, rule, {
           id: field.id
         });
         errors.push(error);
@@ -273,7 +281,7 @@ var Aztec = exports.Aztec = function Aztec(props) {
     layout.worows.map(function (field, index) {
       return _react2.default.createElement(
         'div',
-        { key: index, style: field.style, className: field.className + ' ' + (field.visible === false ? 'hidden' : 'show') },
+        { key: index, style: (0, _extends3.default)({}, field.style), className: field.className + ' ' + (field.visible === false ? 'hidden' : 'show') },
         _react2.default.createElement(_DynamicComponent.DynamicComponent, {
           component: config.map[field.type].type,
           map: config.map[field.type].map,

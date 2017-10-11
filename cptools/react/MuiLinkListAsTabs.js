@@ -71,6 +71,7 @@ class MuiLinkListAsTabs extends Component {
     const list = this.props.links.map((elem, index) => {
       // console.log('MuiLinkListAsTabs elem', elem, 'index', index)
       return (<Tab
+        key={index}
         label={elem.title}
         value={elem.path}
         onActive={() => {

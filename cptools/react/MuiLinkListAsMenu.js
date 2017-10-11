@@ -76,6 +76,7 @@ class MuiLinkListAsMenu extends Component {
     const list = this.props.links.map((elem, index) => {
       // console.log('MuiLinkListAsMenu elem', elem, 'index', index)
       return (<MenuItem
+        key={index}
         primaryText={elem.title}
         value={elem.path}
         onClick={() => {

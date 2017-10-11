@@ -1,8 +1,16 @@
 'use strict';
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _v = require('uuid/v4');
+
+var _v2 = _interopRequireDefault(_v);
 
 var _Checkbox = require('material-ui/Checkbox');
 
@@ -88,11 +96,13 @@ var doRenderProgress = function doRenderProgress(props, colorFunc) {
 
 var doRenderEditableText = function doRenderEditableText(comp, state, fetchData, cellInfo) {
   // Simple Text by div with contentEditable
+  var editStyle = {
+    marginTop: '10px',
+    backgroundColor: '#fafafa'
+  };
   return _react2.default.createElement('div', {
-    style: {
-      marginTop: '10px',
-      backgroundColor: '#fafafa'
-    },
+    id: (0, _v2.default)(),
+    style: (0, _extends3.default)({}, editStyle),
     contentEditable: true,
     suppressContentEditableWarning: true,
     onBlur: function onBlur(e) {
@@ -110,10 +120,12 @@ var doRenderEditableCheckbox = function doRenderEditableCheckbox(comp, state, fe
   var checked = data[cellInfo.index][cellInfo.column.id];
   // http://www.material-ui.com/#/customization/styles
   // https://stackoverflow.com/questions/35870196/materiall-ui-refresh-indicator-center-align-horizontaly
+  var editStyle = { position: 'relative' };
   return _react2.default.createElement(
     'div',
-    { style: { position: 'relative' } },
+    { style: (0, _extends3.default)({}, editStyle) },
     _react2.default.createElement(_Checkbox2.default, {
+      id: (0, _v2.default)(),
       label: '',
       checked: checked,
       onCheck: function onCheck() {
@@ -160,6 +172,7 @@ var doRenderDropdownMenu = function doRenderDropdownMenu(comp, state, fetchData,
   var items = [];
   selections.map(function (elem, index) {
     items.push(_react2.default.createElement(_MenuItem2.default, {
+      id: (0, _v2.default)(),
       key: index,
       value: elem.value,
       primaryText: elem.label,
@@ -171,12 +184,14 @@ var doRenderDropdownMenu = function doRenderDropdownMenu(comp, state, fetchData,
   // is enough.
   //
   // For editting, MUI DropDownMenu is applied here.
+  var mystyle = { marginTop: '-8px' };
   return _react2.default.createElement(
     'div',
-    { style: { marginTop: '-8px' } },
+    { style: (0, _extends3.default)({}, mystyle) },
     _react2.default.createElement(
       _DropDownMenu2.default,
       {
+        id: (0, _v2.default)(),
         maxHeight: 300,
         value: value,
         onChange: function onChange(event, index, value) {
@@ -194,6 +209,7 @@ var doRenderDatePicker = function doRenderDatePicker(comp, state, fetchData, cel
   // ### NEVER use defaultDate property of DatePicker.
   // ### Use value to display your data so that DatePicker show updated value on the cell.
   return _react2.default.createElement(_DatePicker2.default, {
+    id: (0, _v2.default)(),
     onChange: function onChange(event, newDate) {
       updateCellWithValue(comp, cellInfo, newDate);
     },
@@ -213,14 +229,16 @@ var doRenderFilterOptions = function doRenderFilterOptions(filter, _onChange, op
   var items = options.map(function (elem, index) {
     return _react2.default.createElement(
       'option',
-      { key: index, value: elem.value },
+      { id: (0, _v2.default)(), key: index, value: elem.value },
       elem.text
     );
   });
-
+  var mystyle = { width: '100%' };
   return _react2.default.createElement(
     'select',
-    { style: { width: '100%' },
+    {
+      id: (0, _v2.default)(),
+      style: (0, _extends3.default)({}, mystyle),
       onChange: function onChange(event) {
         return _onChange(event.target.value);
       },

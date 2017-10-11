@@ -28,7 +28,7 @@ class MuiAppLogin extends Component {
       <div ref={this.state.instanceId} >
         <h2>MuiAppLogin:{this.state.instanceId}</h2>
         <AppBar
-          style={appBarStyle}
+          style={{...appBarStyle}}
           title={
             <div>
               {title}

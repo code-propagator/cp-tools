@@ -1,5 +1,6 @@
 'use strict'
 import React from 'react'
+import uuidv4 from 'uuid/v4'
 import Checkbox from 'material-ui/Checkbox'
 import DropDownMenu from 'material-ui/DropDownMenu'
 import MenuItem from 'material-ui/MenuItem'
@@ -72,12 +73,14 @@ let doRenderProgress = (props, colorFunc) => {
 
 let doRenderEditableText = (comp, state, fetchData, cellInfo) => {
   // Simple Text by div with contentEditable
+  let editStyle = {
+    marginTop: '10px',
+    backgroundColor: '#fafafa'
+  }
   return (
     <div
-      style={{
-        marginTop: '10px',
-        backgroundColor: '#fafafa'
-      }}
+      id={uuidv4()}
+      style={{...editStyle}}
       contentEditable
       suppressContentEditableWarning
       onBlur={e => {
@@ -96,9 +99,11 @@ let doRenderEditableCheckbox = (comp, state, fetchData, cellInfo) => {
   let checked = data[cellInfo.index][cellInfo.column.id]
   // http://www.material-ui.com/#/customization/styles
   // https://stackoverflow.com/questions/35870196/materiall-ui-refresh-indicator-center-align-horizontaly
+  let editStyle = {position: 'relative'}
   return (
-    <div style={{position: 'relative'}}>
+    <div style={{...editStyle}}>
       <Checkbox
+        id={uuidv4()}
         label=''
         checked={checked}
         onCheck={() => {
@@ -148,6 +153,7 @@ let doRenderDropdownMenu = (comp, state, fetchData, cellInfo, selections) => {
   selections.map((elem, index) => {
     items.push(
       <MenuItem
+        id={uuidv4()}
         key={index}
         value={elem.value}
         primaryText={elem.label}
@@ -160,9 +166,11 @@ let doRenderDropdownMenu = (comp, state, fetchData, cellInfo, selections) => {
   // is enough.
   //
   // For editting, MUI DropDownMenu is applied here.
+  let mystyle = {marginTop: '-8px'}
   return (
-    <div style={{marginTop: '-8px'}}>
+    <div style={{...mystyle}}>
       <DropDownMenu
+        id={uuidv4()}
         maxHeight={300}
         value={value}
         onChange={(event, index, value) => {
@@ -182,6 +190,7 @@ let doRenderDatePicker = (comp, state, fetchData, cellInfo) => {
   // ### Use value to display your data so that DatePicker show updated value on the cell.
   return (
     <DatePicker
+      id={uuidv4()}
       onChange={(event, newDate) => {
         updateCellWithValue(comp, cellInfo, newDate)
       }}
@@ -200,11 +209,13 @@ let doRenderFilterOptions = (filter, onChange, options) => {
   // console.log('Filter', filter)
   // {id: 'status', value:'relationship'}
   let items = options.map((elem, index) => {
-    return <option key={index} value={elem.value}>{elem.text}</option>
+    return <option id={uuidv4()} key={index} value={elem.value}>{elem.text}</option>
   })
-
+  let mystyle = {width: '100%'}
   return (
-    <select style={{width: '100%'}}
+    <select
+      id={uuidv4()}
+      style={{...mystyle}}
       onChange={event => onChange(event.target.value)}
       value={filter ? filter.value : SHOW_ALL}
     >

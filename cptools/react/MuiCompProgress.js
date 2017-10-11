@@ -35,9 +35,9 @@ class MuiCompProgress extends Component {
       <div
         ref={this.state.instanceId}
         tabIndex='-1'
-        style={this.state.progressStyle}>
+        style={{...this.state.progressStyle}}>
         <CircularProgress
-          style={this.state.progressStyle}
+          style={{...this.state.progressStyle}}
           size={this.state.progressSize}
           thickness={this.state.progressThickness} />
       </div>

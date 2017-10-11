@@ -4,7 +4,33 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require('babel-runtime/helpers/inherits');
+
+var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = require('react');
 
@@ -16,40 +42,34 @@ var _CircularProgress2 = _interopRequireDefault(_CircularProgress);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// 0.19.1
-
-
 // 1.0.0
 // https://material-ui-1dab0.firebaseapp.com/demos/progress/
 // import { CircularProgress } from 'material-ui/Progress'
 
 var uuidv4 = require('uuid/v4');
+// 0.19.1
+
 
 var progressConf = require('./MuiCompProgress.conf');
 
 var MuiCompProgress = function (_Component) {
-  _inherits(MuiCompProgress, _Component);
+  (0, _inherits3.default)(MuiCompProgress, _Component);
 
   function MuiCompProgress(props) {
-    _classCallCheck(this, MuiCompProgress);
+    (0, _classCallCheck3.default)(this, MuiCompProgress);
 
-    var _this = _possibleConstructorReturn(this, (MuiCompProgress.__proto__ || Object.getPrototypeOf(MuiCompProgress)).call(this, props));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (MuiCompProgress.__proto__ || (0, _getPrototypeOf2.default)(MuiCompProgress)).call(this, props));
 
     _this.state = {
       instanceId: uuidv4(),
-      progressStyle: !props.progressStyle ? JSON.parse(JSON.stringify(progressConf.progressStyle)) : props.progressStyle,
+      progressStyle: !props.progressStyle ? JSON.parse((0, _stringify2.default)(progressConf.progressStyle)) : props.progressStyle,
       progressSize: !props.progressSize ? progressConf.progressSize.size : props.progressSize.size,
       progressThickness: !props.progressThickness ? progressConf.progressSize.thickness : props.progressSize.thickness
     };
     return _this;
   }
 
-  _createClass(MuiCompProgress, [{
+  (0, _createClass3.default)(MuiCompProgress, [{
     key: 'render',
     value: function render() {
       // console.log('MuiCompProgress state', this.state)
@@ -60,15 +80,14 @@ var MuiCompProgress = function (_Component) {
         {
           ref: this.state.instanceId,
           tabIndex: '-1',
-          style: this.state.progressStyle },
+          style: (0, _extends3.default)({}, this.state.progressStyle) },
         _react2.default.createElement(_CircularProgress2.default, {
-          style: this.state.progressStyle,
+          style: (0, _extends3.default)({}, this.state.progressStyle),
           size: this.state.progressSize,
           thickness: this.state.progressThickness })
       );
     }
   }]);
-
   return MuiCompProgress;
 }(_react.Component);
 

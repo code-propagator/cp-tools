@@ -1,5 +1,13 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+/*
+### For web app, Link shows warning when you click the same Link again.
+
+Warning: Hash history cannot PUSH the same path;
+a new entry will not be added to the history stack
+
+### For electron, warning message is just supressed.
+*/
 
 class LinkList extends Component {
   constructor (props) {

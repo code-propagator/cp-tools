@@ -62,7 +62,7 @@ class TabKeyTextArea extends Component {
     return (
       <div ref={this.state.instanceId} >
         <textarea ref={this.state.textareaId}
-          style={this.props.style}
+          style={{...this.props.style}}
           value={this.state.text}
           onKeyDown={this.onKeyDown}
           onChange={this.onChange}

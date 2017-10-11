@@ -1,5 +1,9 @@
 'use strict';
 
+var _stringify = require('babel-runtime/core-js/json/stringify');
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -28,7 +32,7 @@ var tabbedTextToObject = function tabbedTextToObject(tabbedText) {
   console.log(tabbedText);
   console.log('---> indent to object');
   var obj = i2o(tabbedText);
-  console.log('i2o', JSON.stringify(obj));
+  console.log('i2o', (0, _stringify2.default)(obj));
   return obj;
 };
 // ===> obj is array of roots
@@ -386,7 +390,12 @@ var renderMuiList = function renderMuiList(treeNode, onClickCallback) {
       // }
       name = name + ' [' + key + ']';
       // leaf true
-      return _react2.default.createElement(_List.ListItem, { key: key, ref: refId, onClick: handlerForKey(key, refId), primaryText: name });
+      return _react2.default.createElement(_List.ListItem, {
+        key: key,
+        ref: refId,
+        onClick: handlerForKey(key, refId),
+        primaryText: name
+      });
       // return thisleaf
     } else {
       key++;
@@ -401,18 +410,23 @@ var renderMuiList = function renderMuiList(treeNode, onClickCallback) {
       parent = name;
       var ch = [];
       name = name + ' [' + key + ']';
-      var node = _react2.default.createElement(_List.ListItem, { key: key, ref: refId, onClick: handlerForKey(key, refId), primaryText: name,
-        initiallyOpen: true,
-        primaryTogglesNestedList: true,
-        nestedItems: ch
-      });
+      // ### To avoid 'object is not extensible' error for nestedItems property,
+      // ### You shuld set up ch array first.
       children.map(function (elem, index) {
         level = level + 1;
         ch.push(traverseThis(level, parent, elem));
         level = level - 1;
       });
-      node.nestedItems = ch;
-      return node;
+      // ### Assign ch to nestedItems.
+      return _react2.default.createElement(_List.ListItem, {
+        key: key,
+        ref: refId,
+        onClick: handlerForKey(key, refId),
+        primaryText: name,
+        initiallyOpen: true,
+        primaryTogglesNestedList: true,
+        nestedItems: ch
+      });
     }
   };
 

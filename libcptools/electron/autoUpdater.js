@@ -1,11 +1,17 @@
 'use strict';
 
+var _promise = require('babel-runtime/core-js/promise');
+
+var _promise2 = _interopRequireDefault(_promise);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var electron = require('electron');
 var dialog = electron.dialog;
 var autoUpdater = electron.autoUpdater;
 
 function confirmRestart(releaseNotes) {
-  return new Promise(function (resolve, reject) {
+  return new _promise2.default(function (resolve, reject) {
     dialog.showMessageBox({
       type: 'info',
       title: 'New Updates',

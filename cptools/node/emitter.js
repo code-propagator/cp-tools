@@ -8,11 +8,13 @@ console.log('---> max', events.EventEmitter.defaultMaxListeners)
 // emitter.updateEmitter.setMaxListeners(emitter.updateEmitter.getMaxListeners() + 1)
 // ===> THIS DOESN'T WORK ANY LONGER!
 
-// 'force-update'
 let emitterFactory = (eventName) => {
   // create a emitter
   let myEmitter = new events.EventEmitter()
   console.log('EventEmitter is created for eventName', eventName)
+  // (node:62909) MaxListenersExceededWarning: Possible EventEmitter memory leak detected.
+  // 11 asynchronous-reply listeners added. Use emitter.setMaxListeners() to increase limit
+  myEmitter.setMaxListeners(0)
 
   let myEmitterCallbacks = {}
 
@@ -53,7 +55,9 @@ let authEmitter = emitterFactory('auth-done')
 emitters['force-update'] = updateEmitter
 emitters['auth-done'] = authEmitter
 
-module.exports.emitterFactory = emitterFactory
-module.exports.emitters = emitters
-module.exports.updateEmitter = updateEmitter
-module.exports.authEmitter = authEmitter
+module.exports = {
+  emitterFactory,
+  emitters,
+  updateEmitter,
+  authEmitter
+}
