@@ -73,15 +73,10 @@ var MuiAppLogin = function (_Component) {
       var nextRoute = this.props.nextRoute;
       var backRoute = this.props.backRoute;
       var rendererApi = this.props.rendererApi;
+      //         <h2>MuiAppLogin:{this.state.instanceId}</h2>
       return _react2.default.createElement(
         'div',
         { ref: this.state.instanceId },
-        _react2.default.createElement(
-          'h2',
-          null,
-          'MuiAppLogin:',
-          this.state.instanceId
-        ),
         _react2.default.createElement(_AppBar2.default, {
           style: (0, _extends3.default)({}, appBarStyle),
           title: _react2.default.createElement(

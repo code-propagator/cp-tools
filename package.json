@@ -1,6 +1,6 @@
 {
   "name": "cp-tools",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "App tools for electron, realm, react, router, node, material-ui, react-aztec, react-table, etc...",
   "private": false,
   "repository": {
@@ -10,6 +10,5 @@
   "main": "index.js",
   "keywords": ["electron", "realm", "react", "router", "node", "material-ui", "react-aztec", "react-table"],
   "author": "code.propagator@gmail.com",
-  "license": "MIT",
-  "author": "code-propagator"
+  "license": "MIT"
 }

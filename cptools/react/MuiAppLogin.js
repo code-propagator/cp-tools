@@ -24,9 +24,9 @@ class MuiAppLogin extends Component {
     let nextRoute = this.props.nextRoute
     let backRoute = this.props.backRoute
     let rendererApi = this.props.rendererApi
+    //         <h2>MuiAppLogin:{this.state.instanceId}</h2>
     return (
       <div ref={this.state.instanceId} >
-        <h2>MuiAppLogin:{this.state.instanceId}</h2>
         <AppBar
           style={{...appBarStyle}}
           title={
